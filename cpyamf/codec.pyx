@@ -269,7 +269,7 @@ cdef class Context(object):
         if ret is not None:
             return ret
 
-        cdef unicode u = s.decode('utf-8')
+        cdef unicode u = s.decode('utf-8', 'replace')
 
         self.unicodes[s] = u
         self._strings[u] = s
